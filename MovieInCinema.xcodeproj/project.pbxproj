@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		DB9E57D926209ECB00951D74 /* ListMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E57D826209ECB00951D74 /* ListMovieViewController.swift */; };
 		DBFD8529261F659400FDA7AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD8528261F659400FDA7AD /* AppDelegate.swift */; };
-		DBFD852E261F659400FDA7AD /* MovieList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBFD852C261F659400FDA7AD /* MovieList.xcdatamodeld */; };
+		DBFD852E261F659400FDA7AD /* MovieInCinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBFD852C261F659400FDA7AD /* MovieInCinema.xcdatamodeld */; };
 		DBFD8530261F659800FDA7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBFD852F261F659800FDA7AD /* Assets.xcassets */; };
 		DBFD8533261F659800FDA7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFD8531261F659800FDA7AD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB9E57D826209ECB00951D74 /* ListMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieViewController.swift; sourceTree = "<group>"; };
-		DBFD8525261F659400FDA7AD /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBFD8525261F659400FDA7AD /* MovieInCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieInCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFD8528261F659400FDA7AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBFD852D261F659400FDA7AD /* MovieList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieList.xcdatamodel; sourceTree = "<group>"; };
 		DBFD852F261F659800FDA7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBFD8532261F659800FDA7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBFD8534261F659800FDA7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBFD8535261F659800FDA7AD /* MovieList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieList.entitlements; sourceTree = "<group>"; };
+		DBFD8535261F659800FDA7AD /* MovieInCinema.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieInCinema.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +39,7 @@
 		DBFD851C261F659400FDA7AD = {
 			isa = PBXGroup;
 			children = (
-				DBFD8527261F659400FDA7AD /* MovieList */,
+				DBFD8527261F659400FDA7AD /* MovieInCinema */,
 				DBFD8526261F659400FDA7AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,12 +47,12 @@
 		DBFD8526261F659400FDA7AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DBFD8525261F659400FDA7AD /* MovieList.app */,
+				DBFD8525261F659400FDA7AD /* MovieInCinema.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DBFD8527261F659400FDA7AD /* MovieList */ = {
+		DBFD8527261F659400FDA7AD /* MovieInCinema */ = {
 			isa = PBXGroup;
 			children = (
 				DBFD8528261F659400FDA7AD /* AppDelegate.swift */,
@@ -60,18 +60,18 @@
 				DBFD852F261F659800FDA7AD /* Assets.xcassets */,
 				DBFD8531261F659800FDA7AD /* Main.storyboard */,
 				DBFD8534261F659800FDA7AD /* Info.plist */,
-				DBFD8535261F659800FDA7AD /* MovieList.entitlements */,
-				DBFD852C261F659400FDA7AD /* MovieList.xcdatamodeld */,
+				DBFD8535261F659800FDA7AD /* MovieInCinema.entitlements */,
+				DBFD852C261F659400FDA7AD /* MovieInCinema.xcdatamodeld */,
 			);
-			path = MovieList;
+			path = MovieInCinema;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DBFD8524261F659400FDA7AD /* MovieList */ = {
+		DBFD8524261F659400FDA7AD /* MovieInCinema */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DBFD8538261F659800FDA7AD /* Build configuration list for PBXNativeTarget "MovieList" */;
+			buildConfigurationList = DBFD8538261F659800FDA7AD /* Build configuration list for PBXNativeTarget "MovieInCinema" */;
 			buildPhases = (
 				DBFD8521261F659400FDA7AD /* Sources */,
 				DBFD8522261F659400FDA7AD /* Frameworks */,
@@ -81,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = MovieList;
+			name = MovieInCinema;
 			productName = MovieList;
-			productReference = DBFD8525261F659400FDA7AD /* MovieList.app */;
+			productReference = DBFD8525261F659400FDA7AD /* MovieInCinema.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DBFD8520261F659400FDA7AD /* Build configuration list for PBXProject "MovieList" */;
+			buildConfigurationList = DBFD8520261F659400FDA7AD /* Build configuration list for PBXProject "MovieInCinema" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DBFD8524261F659400FDA7AD /* MovieList */,
+				DBFD8524261F659400FDA7AD /* MovieInCinema */,
 			);
 		};
 /* End PBXProject section */
@@ -136,7 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBFD8529261F659400FDA7AD /* AppDelegate.swift in Sources */,
-				DBFD852E261F659400FDA7AD /* MovieList.xcdatamodeld in Sources */,
+				DBFD852E261F659400FDA7AD /* MovieInCinema.xcdatamodeld in Sources */,
 				DB9E57D926209ECB00951D74 /* ListMovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,17 +275,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MovieList/MovieList.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MovieInCinema/MovieInCinema.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X8NNCQ3HW6;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MovieList/Info.plist;
+				INFOPLIST_FILE = MovieInCinema/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Oleksandr-Solokha.MovieList";
+				PRODUCT_BUNDLE_IDENTIFIER = "Oleksandr-Solokha.MovieInCinema";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -296,17 +296,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MovieList/MovieList.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MovieInCinema/MovieInCinema.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X8NNCQ3HW6;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = MovieList/Info.plist;
+				INFOPLIST_FILE = MovieInCinema/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Oleksandr-Solokha.MovieList";
+				PRODUCT_BUNDLE_IDENTIFIER = "Oleksandr-Solokha.MovieInCinema";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -315,7 +315,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DBFD8520261F659400FDA7AD /* Build configuration list for PBXProject "MovieList" */ = {
+		DBFD8520261F659400FDA7AD /* Build configuration list for PBXProject "MovieInCinema" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBFD8536261F659800FDA7AD /* Debug */,
@@ -324,7 +324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DBFD8538261F659800FDA7AD /* Build configuration list for PBXNativeTarget "MovieList" */ = {
+		DBFD8538261F659800FDA7AD /* Build configuration list for PBXNativeTarget "MovieInCinema" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBFD8539261F659800FDA7AD /* Debug */,
@@ -336,13 +336,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DBFD852C261F659400FDA7AD /* MovieList.xcdatamodeld */ = {
+		DBFD852C261F659400FDA7AD /* MovieInCinema.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				DBFD852D261F659400FDA7AD /* MovieList.xcdatamodel */,
 			);
 			currentVersion = DBFD852D261F659400FDA7AD /* MovieList.xcdatamodel */;
-			path = MovieList.xcdatamodeld;
+			path = MovieInCinema.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
