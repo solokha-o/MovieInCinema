@@ -10,14 +10,20 @@ import Cocoa
 class MovieDetailViewController: NSViewController {
     
     //add all components of view
-    @IBOutlet weak var moviePosterImageView: NSImageView!
-    
+    @IBOutlet weak var moviePosterImageView: NSImageView! {
+        didSet {
+            moviePosterImageView.wantsLayer = true
+            moviePosterImageView.shadow = NSShadow()
+            moviePosterImageView.layer?.cornerRadius = 10.0
+            moviePosterImageView.layer?.shadowOpacity = 1.0
+            moviePosterImageView.layer?.shadowColor = NSColor.black.cgColor
+            moviePosterImageView.layer?.shadowOffset = NSMakeSize(0, -10)
+            moviePosterImageView.layer?.shadowRadius = 20
+        }
+    }
     @IBOutlet weak var movieTitleTextField: NSTextField!
-    
     @IBOutlet weak var releaseDateTextField: NSTextField!
-    
     @IBOutlet weak var overViewMovieTextField: NSTextField!
-    
     @IBOutlet weak var similarMoviesCollectionView: NSCollectionView!
     
     override func viewDidLoad() {

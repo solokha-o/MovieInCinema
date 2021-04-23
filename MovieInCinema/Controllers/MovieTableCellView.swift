@@ -11,7 +11,17 @@ import Foundation
 class MovieTableCellView: NSTableCellView {
     
     //create outlet from all views in cell
-    @IBOutlet weak var moviePosterImageView: NSImageView!
+    @IBOutlet weak var moviePosterImageView: NSImageView! {
+        didSet {
+//            moviePosterImageView.shadow = NSShadow()
+            moviePosterImageView.wantsLayer = true
+            moviePosterImageView.layer?.cornerRadius = 10.0
+            moviePosterImageView.layer?.shadowOpacity = 1.0
+            moviePosterImageView.layer?.shadowOffset = NSMakeSize(0, -3)
+            moviePosterImageView.layer?.shadowColor = .black
+            moviePosterImageView.layer?.shadowRadius = 20.0
+        }
+    }
     @IBOutlet weak var movieTitleTextField: NSTextField!
     @IBOutlet weak var voteAverageTextField: NSTextField!
     //create progressive indicator
@@ -30,11 +40,6 @@ class MovieTableCellView: NSTableCellView {
         guard let poster = movieModel.posterPath else { fatalError("No poster") }
         guard let link = URL(string: "https://image.tmdb.org/t/p/original" + poster) else { fatalError("Image link is not correct!") }
         moviePosterImageView.load(url: link)
-        moviePosterImageView.layer?.cornerRadius = 10.0
-        moviePosterImageView.layer?.shadowOpacity = 1.0
-        moviePosterImageView.layer?.shadowOffset = NSMakeSize(0, -10)
-        moviePosterImageView.layer?.shadowColor = .black
-        moviePosterImageView.layer?.shadowRadius = 20.0
     }
     //setup progressive indicator
     func setupProgressIndicator() {

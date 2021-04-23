@@ -361,13 +361,13 @@
             <objects>
                 <viewController storyboardIdentifier="ListMovieViewController" id="o5v-Qt-8Jy" customClass="ListMovieViewController" customModule="MovieInCinema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" misplaced="YES" id="0Ey-TH-A7c">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="163"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="135"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="69" horizontalPageScroll="10" verticalLineScroll="69" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn8-4z-AXI">
-                                <rect key="frame" x="0.0" y="20" width="380" height="71"/>
+                                <rect key="frame" x="0.0" y="20" width="380" height="30"/>
                                 <clipView key="contentView" drawsBackground="NO" id="fEo-EF-6XM">
-                                    <rect key="frame" x="1" y="1" width="378" height="69"/>
+                                    <rect key="frame" x="1" y="1" width="378" height="28"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="inset" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowHeight="69" rowSizeStyle="automatic" headerView="jTs-Md-cnm" viewBased="YES" id="msR-qr-Uki">
@@ -391,21 +391,21 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="DataCell" id="r1X-v3-xwJ" customClass="MovieTableCellView" customModule="MovieInCinema" customModuleProvider="target">
-                                                            <rect key="frame" x="18" y="0.0" width="161" height="69"/>
+                                                            <rect key="frame" x="18" y="0.0" width="341" height="69"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1b-Vh-13B">
                                                                     <rect key="frame" x="0.0" y="2" width="341" height="65"/>
                                                                     <subviews>
                                                                         <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-FK-jd9">
-                                                                            <rect key="frame" x="0.0" y="12" width="341" height="56"/>
+                                                                            <rect key="frame" x="0.0" y="5" width="341" height="56"/>
                                                                             <subviews>
                                                                                 <imageView wantsLayer="YES" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fla-1G-dh4">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="56"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="9xP-xb-5Kw"/>
                                                                                     </constraints>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" id="BQC-0L-eCQ"/>
+                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="BQC-0L-eCQ"/>
                                                                                 </imageView>
                                                                                 <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-dB-d8y">
                                                                                     <rect key="frame" x="105" y="5" width="236" height="46"/>
@@ -529,7 +529,6 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="7VX-js-gFW"/>
                                                 </constraints>
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" imageFrameStyle="photo" id="KeW-jX-XQ1"/>
-                                                <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             </imageView>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-QV-fvJ">
                                                 <rect key="frame" x="258" y="196" width="234" height="73"/>
