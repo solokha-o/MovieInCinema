@@ -28,7 +28,7 @@ class DataLoader {
                     print(data)
                     do {
                         let json = try JSONDecoder().decode(MoviePeriod.self, from: data)
-                        print(response)
+                        print(json)
                         DispatchQueue.main.async {
                             completion(json)
                         }

@@ -12,8 +12,8 @@ class MovieTableCellView: NSTableCellView {
     
     //create outlet from all views in cell
     @IBOutlet weak var moviePosterImageView: NSImageView!
-    @IBOutlet weak var movieTitleLable: NSTextField!
-    @IBOutlet weak var voteAverageLabel: NSTextField!
+    @IBOutlet weak var movieTitleTextField: NSTextField!
+    @IBOutlet weak var voteAverageTextField: NSTextField!
     //create progressive indicator
     var progressIndicator = NSProgressIndicator()
     
@@ -22,11 +22,11 @@ class MovieTableCellView: NSTableCellView {
         
         // Drawing code here.
     }
-    //set outlet of cell
+    //set outlets of cell
     func setCell(from movieModel: MovieModel) {
 //        setupProgressIndicator()
-        movieTitleLable.stringValue = movieModel.title ?? "No title"
-        voteAverageLabel.stringValue = "TMDB - " + String(movieModel.voteAverage ?? 0.0)
+        movieTitleTextField.stringValue = movieModel.title ?? "No title"
+        voteAverageTextField.stringValue = "TMDB - " + String(movieModel.voteAverage ?? 0.0)
         guard let poster = movieModel.posterPath else { fatalError("No poster") }
         guard let link = URL(string: "https://image.tmdb.org/t/p/original" + poster) else { fatalError("Image link is not correct!") }
         moviePosterImageView.load(url: link)
