@@ -360,14 +360,14 @@
         <scene sceneID="Swi-Fr-DuN">
             <objects>
                 <viewController storyboardIdentifier="ListMovieViewController" id="o5v-Qt-8Jy" customClass="ListMovieViewController" customModule="MovieInCinema" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="0Ey-TH-A7c">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="135"/>
+                    <view key="view" id="0Ey-TH-A7c">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="163"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="69" horizontalPageScroll="10" verticalLineScroll="69" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn8-4z-AXI">
-                                <rect key="frame" x="0.0" y="20" width="380" height="30"/>
+                                <rect key="frame" x="0.0" y="20" width="380" height="71"/>
                                 <clipView key="contentView" drawsBackground="NO" id="fEo-EF-6XM">
-                                    <rect key="frame" x="1" y="1" width="378" height="28"/>
+                                    <rect key="frame" x="1" y="1" width="378" height="69"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="inset" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowHeight="69" rowSizeStyle="automatic" headerView="jTs-Md-cnm" viewBased="YES" id="msR-qr-Uki">
@@ -395,23 +395,23 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1b-Vh-13B">
-                                                                    <rect key="frame" x="0.0" y="2" width="341" height="65"/>
+                                                                    <rect key="frame" x="0.0" y="2" width="341" height="100"/>
                                                                     <subviews>
                                                                         <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8n8-FK-jd9">
-                                                                            <rect key="frame" x="0.0" y="5" width="341" height="56"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="341" height="100"/>
                                                                             <subviews>
                                                                                 <imageView wantsLayer="YES" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fla-1G-dh4">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="56"/>
+                                                                                    <rect key="frame" x="0.0" y="22" width="100" height="56"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="9xP-xb-5Kw"/>
                                                                                     </constraints>
                                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" id="BQC-0L-eCQ"/>
                                                                                 </imageView>
                                                                                 <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-dB-d8y">
-                                                                                    <rect key="frame" x="105" y="5" width="236" height="46"/>
+                                                                                    <rect key="frame" x="105" y="0.0" width="236" height="100"/>
                                                                                     <subviews>
                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="d3m-Ov-tQB">
-                                                                                            <rect key="frame" x="-2" y="20" width="152" height="26"/>
+                                                                                            <rect key="frame" x="-2" y="74" width="152" height="26"/>
                                                                                             <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" sendsActionOnEndEditing="YES" title="movieTitleLable" id="fkW-89-Wyj">
                                                                                                 <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -419,19 +419,30 @@
                                                                                             </textFieldCell>
                                                                                         </textField>
                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="01s-Ae-R0X">
-                                                                                            <rect key="frame" x="-2" y="0.0" width="112" height="16"/>
+                                                                                            <rect key="frame" x="-2" y="54" width="112" height="16"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="clipping" title="voteAverageLabel" id="FYI-3Y-hMt">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                             </textFieldCell>
                                                                                         </textField>
+                                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Id-2R-S8q">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                            <constraints>
+                                                                                                <constraint firstAttribute="width" constant="50" id="4Sr-Hl-67e"/>
+                                                                                                <constraint firstAttribute="height" constant="50" id="yhO-lA-yHa"/>
+                                                                                            </constraints>
+                                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="GKD-qM-IcP"/>
+                                                                                            <color key="contentTintColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </imageView>
                                                                                     </subviews>
                                                                                     <visibilityPriorities>
                                                                                         <integer value="1000"/>
                                                                                         <integer value="1000"/>
+                                                                                        <integer value="1000"/>
                                                                                     </visibilityPriorities>
                                                                                     <customSpacing>
+                                                                                        <real value="3.4028234663852886e+38"/>
                                                                                         <real value="3.4028234663852886e+38"/>
                                                                                         <real value="3.4028234663852886e+38"/>
                                                                                     </customSpacing>
@@ -459,9 +470,10 @@
                                                                 <constraint firstItem="g1b-Vh-13B" firstAttribute="leading" secondItem="r1X-v3-xwJ" secondAttribute="leading" id="Jqu-8l-VuM"/>
                                                                 <constraint firstAttribute="bottom" secondItem="g1b-Vh-13B" secondAttribute="bottom" priority="750" constant="2" id="Klc-MZ-gU5"/>
                                                                 <constraint firstAttribute="trailing" secondItem="g1b-Vh-13B" secondAttribute="trailing" id="X8D-zl-dS6"/>
-                                                                <constraint firstItem="g1b-Vh-13B" firstAttribute="top" secondItem="r1X-v3-xwJ" secondAttribute="top" priority="750" constant="2" id="fNB-kS-oU2"/>
+                                                                <constraint firstItem="g1b-Vh-13B" firstAttribute="top" secondItem="r1X-v3-xwJ" secondAttribute="top" priority="750" constant="-33" id="fNB-kS-oU2"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="isWantWatchImageView" destination="3Id-2R-S8q" id="5Ml-fe-qnG"/>
                                                                 <outlet property="moviePosterImageView" destination="fla-1G-dh4" id="lm2-TQ-1bO"/>
                                                                 <outlet property="movieTitleTextField" destination="d3m-Ov-tQB" id="yUE-wX-Ghh"/>
                                                                 <outlet property="textField" destination="d3m-Ov-tQB" id="5fM-74-E11"/>
@@ -507,7 +519,7 @@
                 </viewController>
                 <customObject id="ZcK-1c-XST" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="1070"/>
+            <point key="canvasLocation" x="-146" y="1069.5"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="93O-pl-U7I">

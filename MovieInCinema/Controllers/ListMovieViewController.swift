@@ -63,6 +63,21 @@ extension ListMovieViewController: NSTableViewDelegate, NSTableViewDataSource {
         NotificationCenter.default.post(name: .movieDetailNotificationKay, object: nil, userInfo: userInfo)
         return true
     }
+    //configure movie make want to watch
+    func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
+        switch edge {
+            case .trailing, .leading:
+                let wantWatchMovieAction = NSTableViewRowAction(style: .destructive, title: "Favourite to watch") { [self] (rowAction, row) in
+                    moviesList[row].isWantWatch.toggle()
+                    listMovieTableView.reloadData()
+                }
+                wantWatchMovieAction.image = moviesList[row].isWantWatch ? NSImage(systemSymbolName: "heart.fill", accessibilityDescription: nil) : NSImage(systemSymbolName: "heart", accessibilityDescription: nil)
+                wantWatchMovieAction.backgroundColor = moviesList[row].isWantWatch ? .green : .lightGray
+                return [wantWatchMovieAction]
+            @unknown default:
+                fatalError()
+        }
+    }
 }
 
 

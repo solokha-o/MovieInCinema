@@ -38,6 +38,7 @@ struct MovieModel: Codable {
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
+    var isWantWatch = false
     
     
     enum CodingKeys: String, CodingKey {

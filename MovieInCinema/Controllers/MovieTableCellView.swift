@@ -24,7 +24,8 @@ class MovieTableCellView: NSTableCellView {
     }
     @IBOutlet weak var movieTitleTextField: NSTextField!
     @IBOutlet weak var voteAverageTextField: NSTextField!
-   
+    @IBOutlet weak var isWantWatchImageView: NSImageView!
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
@@ -37,5 +38,10 @@ class MovieTableCellView: NSTableCellView {
         guard let poster = movieModel.posterPath else { fatalError("No poster") }
         guard let link = URL(string: "https://image.tmdb.org/t/p/original" + poster) else { fatalError("Image link is not correct!") }
         moviePosterImageView.load(url: link)
+        if movieModel.isWantWatch {
+            isWantWatchImageView.image = NSImage(systemSymbolName: "heart.fill", accessibilityDescription: nil)
+        } else {
+            isWantWatchImageView.image = NSImage(systemSymbolName: "heart", accessibilityDescription: nil)
+        }
     }
 }
