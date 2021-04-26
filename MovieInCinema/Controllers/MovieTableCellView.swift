@@ -24,9 +24,7 @@ class MovieTableCellView: NSTableCellView {
     }
     @IBOutlet weak var movieTitleTextField: NSTextField!
     @IBOutlet weak var voteAverageTextField: NSTextField!
-    //create progressive indicator
-    var progressIndicator = NSProgressIndicator()
-    
+   
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
@@ -34,21 +32,10 @@ class MovieTableCellView: NSTableCellView {
     }
     //set outlets of cell
     func setCell(from movieModel: MovieModel) {
-//        setupProgressIndicator()
         movieTitleTextField.stringValue = movieModel.title ?? "No title"
         voteAverageTextField.stringValue = "TMDB - " + String(movieModel.voteAverage ?? 0.0)
         guard let poster = movieModel.posterPath else { fatalError("No poster") }
         guard let link = URL(string: "https://image.tmdb.org/t/p/original" + poster) else { fatalError("Image link is not correct!") }
         moviePosterImageView.load(url: link)
-    }
-    //setup progressive indicator
-    func setupProgressIndicator() {
-        progressIndicator = NSProgressIndicator(frame: NSRect(x: 0, y: 0, width: 20, height: 20))
-        progressIndicator.layer?.cornerRadius = 10.0
-        progressIndicator.controlSize = .large
-        progressIndicator.style = .spinning
-        progressIndicator.frame.origin = CGPoint(x: moviePosterImageView.frame.height / 2 - 20, y: moviePosterImageView.frame.width / 2 - 20)
-        moviePosterImageView.addSubview(progressIndicator)
-        progressIndicator.startAnimation(nil)
     }
 }

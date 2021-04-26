@@ -587,7 +587,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EV-qq-M05">
+                                    <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="9EV-qq-M05">
                                         <rect key="frame" x="0.0" y="0.0" width="498" height="250"/>
                                         <clipView key="contentView" id="2EK-GX-RmJ">
                                             <rect key="frame" x="1" y="1" width="496" height="248"/>
@@ -595,16 +595,16 @@
                                             <subviews>
                                                 <collectionView id="COo-OI-hka">
                                                     <rect key="frame" x="0.0" y="0.0" width="496" height="248"/>
-                                                    <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="Hje-xB-omv">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="l57-nB-sUw">
+                                                        <size key="itemSize" width="180" height="180"/>
                                                     </collectionViewFlowLayout>
                                                     <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </collectionView>
                                             </subviews>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="NGF-Xv-aGe">
-                                            <rect key="frame" x="1" y="233" width="396" height="16"/>
+                                            <rect key="frame" x="-100" y="-100" width="396" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="UtH-mt-Nxf">
@@ -645,44 +645,62 @@
                         <outlet property="movieTitleTextField" destination="42X-Xp-ijU" id="rZP-OV-a4n"/>
                         <outlet property="overViewMovieTextField" destination="93T-y8-evM" id="YfY-g2-oYL"/>
                         <outlet property="releaseDateTextField" destination="b4M-By-t9f" id="9Np-WT-s5c"/>
+                        <outlet property="similarMoviesCollectionView" destination="COo-OI-hka" id="g8a-RQ-aGf"/>
                     </connections>
                 </viewController>
                 <customObject id="Nh4-a5-Cml" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="641.5" y="1247.5"/>
         </scene>
-        <!--Collection View Item-->
+        <!--Similar Movie Collection View Item-->
         <scene sceneID="u7l-0E-K22">
             <objects>
-                <collectionViewItem id="REe-mZ-oDs" sceneMemberID="viewController">
+                <collectionViewItem storyboardIdentifier="SimilarMovieCollectionViewItem" id="REe-mZ-oDs" customClass="SimilarMovieCollectionViewItem" customModule="MovieInCinema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="GNi-y7-jmE">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="143"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-zX-Ccc">
-                                <rect key="frame" x="34" y="24" width="32" height="32"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSBonjour" id="H16-GE-ind"/>
-                            </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GTX-Ph-EMp">
-                                <rect key="frame" x="32" y="0.0" width="37" height="21"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="e1D-Px-O7p">
-                                    <font key="font" textStyle="title2" name=".SFNS-Regular"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgB-gQ-o5I">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="143"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-zX-Ccc">
+                                        <rect key="frame" x="34" y="21" width="32" height="122"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSBonjour" id="H16-GE-ind"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GTX-Ph-EMp">
+                                        <rect key="frame" x="32" y="0.0" width="37" height="21"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="e1D-Px-O7p">
+                                            <font key="font" textStyle="title2" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="GTX-Ph-EMp" firstAttribute="top" secondItem="pXf-zX-Ccc" secondAttribute="bottom" constant="3" id="Bfr-bA-xmc"/>
-                            <constraint firstItem="GTX-Ph-EMp" firstAttribute="centerX" secondItem="pXf-zX-Ccc" secondAttribute="centerX" id="PxN-hf-plF"/>
-                            <constraint firstAttribute="bottom" secondItem="GTX-Ph-EMp" secondAttribute="bottom" id="mmE-gc-zZM"/>
-                            <constraint firstItem="GTX-Ph-EMp" firstAttribute="centerX" secondItem="GNi-y7-jmE" secondAttribute="centerX" id="qlA-O2-Ryz"/>
+                            <constraint firstItem="FgB-gQ-o5I" firstAttribute="top" secondItem="GNi-y7-jmE" secondAttribute="top" id="0nr-AU-PmU"/>
+                            <constraint firstAttribute="trailing" secondItem="FgB-gQ-o5I" secondAttribute="trailing" id="IZM-OY-eMP"/>
+                            <constraint firstAttribute="bottom" secondItem="FgB-gQ-o5I" secondAttribute="bottom" id="RGQ-at-t3d"/>
+                            <constraint firstItem="FgB-gQ-o5I" firstAttribute="leading" secondItem="GNi-y7-jmE" secondAttribute="leading" id="k7k-Uq-IYF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="similarMoviePoster" destination="pXf-zX-Ccc" id="LOs-FO-otF"/>
+                        <outlet property="similarMovieTitleTextField" destination="GTX-Ph-EMp" id="XyM-UV-VOE"/>
+                    </connections>
                 </collectionViewItem>
                 <customObject id="osr-zr-7LI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="1355.5"/>
+            <point key="canvasLocation" x="1012" y="1366"/>
         </scene>
     </scenes>
     <resources>

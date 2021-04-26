@@ -10,6 +10,8 @@
 		DB1431012626AC9700D9041F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1431002626AC9700D9041F /* ImageLoader.swift */; };
 		DB1431042626BC9300D9041F /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1431032626BC9300D9041F /* DataLoader.swift */; };
 		DB2C91A1262210850034F734 /* MovieTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2C91A0262210850034F734 /* MovieTableCellView.swift */; };
+		DB2EEB8A2632FF2A002FB3EE /* SimilarMovieCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2EEB882632FF2A002FB3EE /* SimilarMovieCollectionViewItem.swift */; };
+		DB2EEB8B2632FF2A002FB3EE /* SimilarMovieCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2EEB892632FF2A002FB3EE /* SimilarMovieCollectionViewItem.xib */; };
 		DB50CBB62632D9ED00D0CA21 /* NotificationName + movieDetailNotificationKay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50CBB52632D9ED00D0CA21 /* NotificationName + movieDetailNotificationKay.swift */; };
 		DB6302ED2628AA4D008FEFE7 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6302EC2628AA4D008FEFE7 /* MovieDetailViewController.swift */; };
 		DB9E57D926209ECB00951D74 /* ListMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E57D826209ECB00951D74 /* ListMovieViewController.swift */; };
@@ -24,6 +26,8 @@
 		DB1431002626AC9700D9041F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		DB1431032626BC9300D9041F /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		DB2C91A0262210850034F734 /* MovieTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableCellView.swift; sourceTree = "<group>"; };
+		DB2EEB882632FF2A002FB3EE /* SimilarMovieCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMovieCollectionViewItem.swift; sourceTree = "<group>"; };
+		DB2EEB892632FF2A002FB3EE /* SimilarMovieCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarMovieCollectionViewItem.xib; sourceTree = "<group>"; };
 		DB50CBB52632D9ED00D0CA21 /* NotificationName + movieDetailNotificationKay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName + movieDetailNotificationKay.swift"; sourceTree = "<group>"; };
 		DB6302EC2628AA4D008FEFE7 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		DB9E57D826209ECB00951D74 /* ListMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMovieViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 				DB9E57D826209ECB00951D74 /* ListMovieViewController.swift */,
 				DB2C91A0262210850034F734 /* MovieTableCellView.swift */,
 				DB6302EC2628AA4D008FEFE7 /* MovieDetailViewController.swift */,
+				DB2EEB882632FF2A002FB3EE /* SimilarMovieCollectionViewItem.swift */,
+				DB2EEB892632FF2A002FB3EE /* SimilarMovieCollectionViewItem.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2EEB8B2632FF2A002FB3EE /* SimilarMovieCollectionViewItem.xib in Resources */,
 				DBFD8530261F659800FDA7AD /* Assets.xcassets in Resources */,
 				DBFD8533261F659800FDA7AD /* Main.storyboard in Resources */,
 			);
@@ -185,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2EEB8A2632FF2A002FB3EE /* SimilarMovieCollectionViewItem.swift in Sources */,
 				DBCF03862621F20B001D009E /* MovieModel.swift in Sources */,
 				DBFD8529261F659400FDA7AD /* AppDelegate.swift in Sources */,
 				DB1431042626BC9300D9041F /* DataLoader.swift in Sources */,
