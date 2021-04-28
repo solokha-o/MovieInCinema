@@ -42,7 +42,12 @@ class MovieDetailViewController: NSViewController {
         guard let movie = notification.userInfo?["movieDetail"] as? MovieModel else { return }
         if let posterPath = movie.posterPath, let title = movie.title, let releaseDate = movie.releaseDate, let overview = movie.overview, let id = movie.id{
             guard let posterURL = URL(string: "https://image.tmdb.org/t/p/original" + posterPath) else { fatalError("No correct poster link") }
-            moviePosterImageView.load(url: posterURL)
+            //check if image in cache, if not - load it
+            if cacheImage[posterPath] == nil {
+                moviePosterImageView.load(url: posterURL, cache: posterPath)
+            } else {
+                moviePosterImageView.image = cacheImage[posterPath]
+            }
             movieTitleTextField.stringValue = title
             releaseDateTextField.stringValue = releaseDate
             overViewMovieTextField.stringValue = overview

@@ -13,7 +13,7 @@ class MovieTableCellView: NSTableCellView {
     //create outlet from all views in cell
     @IBOutlet weak var moviePosterImageView: NSImageView! {
         didSet {
-//            moviePosterImageView.shadow = NSShadow()
+            //            moviePosterImageView.shadow = NSShadow()
             moviePosterImageView.wantsLayer = true
             moviePosterImageView.layer?.cornerRadius = 10.0
             moviePosterImageView.layer?.shadowOpacity = 1.0
@@ -37,7 +37,12 @@ class MovieTableCellView: NSTableCellView {
         voteAverageTextField.stringValue = "TMDB - " + String(movieModel.voteAverage ?? 0.0)
         guard let poster = movieModel.posterPath else { fatalError("No poster") }
         guard let link = URL(string: "https://image.tmdb.org/t/p/original" + poster) else { fatalError("Image link is not correct!") }
-        moviePosterImageView.load(url: link)
+        //check if image in cache, if not - load it
+        if cacheImage[poster] == nil {
+            moviePosterImageView.load(url: link, cache: poster)
+        } else {
+            moviePosterImageView.image = cacheImage[poster]
+        }
         if movieModel.isWantWatch {
             isWantWatchImageView.image = NSImage(systemSymbolName: "heart.fill", accessibilityDescription: nil)
         } else {
