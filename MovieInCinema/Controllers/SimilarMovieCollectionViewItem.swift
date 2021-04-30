@@ -10,7 +10,12 @@ import Cocoa
 class SimilarMovieCollectionViewItem: NSCollectionViewItem {
     
     //create outlet from all views in item
-    @IBOutlet weak var similarMoviePoster: NSImageView!
+    @IBOutlet weak var similarMoviePoster: NSImageView! {
+        didSet {
+            similarMoviePoster.wantsLayer = true
+            similarMoviePoster.layer?.cornerRadius = 20.0
+        }
+    }
     @IBOutlet weak var similarMovieTitleTextField: NSTextField!
     
     override func viewDidLoad() {

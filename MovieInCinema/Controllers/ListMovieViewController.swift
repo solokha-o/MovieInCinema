@@ -54,7 +54,7 @@ extension ListMovieViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
     //configure height of cell
     internal func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 150
+        return 150  
     }
     //configure selecting row
     internal func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
