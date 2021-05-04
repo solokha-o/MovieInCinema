@@ -31,6 +31,11 @@ class DataLoader {
                         print(json)
                         DispatchQueue.main.async {
                             completion(json)
+                            //load json data save to UserDefaults
+                            let encoder = JSONEncoder()
+                            if let encoded = try? encoder.encode(json) {
+                                UserDefaults.standard.set(encoded, forKey: link)
+                            }
                         }
                     } catch {
                         print("Have some error - \(error.localizedDescription)")

@@ -1,12 +1,12 @@
 //
 //  ListMovieViewController.swift
-//  MovieList
+//  MovieInCinema
 //
 //  Created by Oleksandr Solokha on 09.04.2021.
 //
 
 import Cocoa
-
+import Network
 
 
 
@@ -21,8 +21,35 @@ class ListMovieViewController: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        //load movies' list
-        DataLoader.shared.loadData(from: movieLink) { [weak self] movies in
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // delegate and dataSource of tableView
+        listMovieTableView.delegate = self
+        listMovieTableView.dataSource  = self
+        //create monitor for checking network connection
+        let monitorConnection = NWPathMonitor()
+        let queue = DispatchQueue(label: "MonitorConnection")
+        monitorConnection.start(queue: queue)
+        //check network for available
+        monitorConnection.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                print("We're connected!")
+                //load movies' list from API if online
+                self.loadMovies(from: self.movieLink)
+            } else {
+                print("No connection.")
+                //get movies' list from UserDefaults if offline
+                self.getMovies(for: self.movieLink)
+            }
+            print(path.isExpensive)
+        }
+    }
+    //configure loading movies from API
+    private func loadMovies(from link: String) {
+        DataLoader.shared.loadData(from: link) { [weak self] movies in
             if let moviesList = movies.results {
                 self?.moviesList = moviesList
                 self?.listMovieTableView.reloadData()
@@ -33,12 +60,21 @@ class ListMovieViewController: NSViewController {
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // delegate and dataSource of tableView
-        listMovieTableView.delegate = self
-        listMovieTableView.dataSource  = self
+    //configure getting movies from UserDefaults
+    private func getMovies(for key: String) {
+        let decoder = JSONDecoder()
+        if let decoded = UserDefaults.standard.object(forKey: key) as? Data {
+            if let movies = try? decoder.decode(MoviePeriod.self, from: decoded) {
+                if let moviesList = movies.results {
+                    self.moviesList = moviesList
+                    self.listMovieTableView.reloadData()
+                    //set in notification centre first movie
+                    let userInfo : [AnyHashable:Any] = ["movieDetail" : moviesList.first as Any]
+                    NotificationCenter.default.post(name: .movieDetailNotificationKay, object: nil, userInfo: userInfo)
+                    print(moviesList)
+                }
+            }
+        }
     }
 }
 extension ListMovieViewController: NSTableViewDelegate, NSTableViewDataSource {
@@ -64,7 +100,7 @@ extension ListMovieViewController: NSTableViewDelegate, NSTableViewDataSource {
         return true
     }
     //configure movie make want to watch
-    func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
+    internal func tableView(_ tableView: NSTableView, rowActionsForRow row: Int, edge: NSTableView.RowActionEdge) -> [NSTableViewRowAction] {
         switch edge {
             case .trailing, .leading:
                 let wantWatchMovieAction = NSTableViewRowAction(style: .destructive, title: "Favourite to watch") { [self] (rowAction, row) in
