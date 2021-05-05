@@ -13,7 +13,6 @@ class MovieTableCellView: NSTableCellView {
     //create outlet from all views in cell
     @IBOutlet weak var moviePosterImageView: NSImageView! {
         didSet {
-            //            moviePosterImageView.shadow = NSShadow()
             moviePosterImageView.wantsLayer = true
             moviePosterImageView.layer?.cornerRadius = 10.0
             moviePosterImageView.layer?.shadowOpacity = 1.0

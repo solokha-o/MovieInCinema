@@ -36,7 +36,7 @@ class ListMovieViewController: NSViewController {
         //check network for available
         monitorConnection.pathUpdateHandler = { path in
             if path.status == .satisfied {
-                print("We're connected!")
+                print("Mac have got connected!")
                 //load movies' list from API if online
                 self.loadMovies(from: self.movieLink)
             } else {
@@ -44,7 +44,6 @@ class ListMovieViewController: NSViewController {
                 //get movies' list from UserDefaults if offline
                 self.getMovies(for: self.movieLink)
             }
-            print(path.isExpensive)
         }
     }
     //configure loading movies from API

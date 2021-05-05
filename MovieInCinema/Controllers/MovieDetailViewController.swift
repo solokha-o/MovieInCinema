@@ -13,7 +13,6 @@ class MovieDetailViewController: NSViewController {
     @IBOutlet weak var moviePosterImageView: NSImageView! {
         didSet {
             moviePosterImageView.wantsLayer = true
-            moviePosterImageView.shadow = NSShadow()
             moviePosterImageView.layer?.cornerRadius = 10.0
             moviePosterImageView.layer?.shadowOpacity = 1.0
             moviePosterImageView.layer?.shadowColor = NSColor.black.cgColor
