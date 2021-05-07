@@ -55,7 +55,7 @@ class ListMovieViewController: NSViewController {
                 //set in notification centre first movie
                 let userInfo : [AnyHashable:Any] = ["movieDetail" : moviesList.first as Any]
                 NotificationCenter.default.post(name: .movieDetailNotificationKay, object: nil, userInfo: userInfo)
-                print(moviesList)
+                print("Array with movies have loaded from API- \(moviesList)")
             }
         }
     }
@@ -70,7 +70,7 @@ class ListMovieViewController: NSViewController {
                     //set in notification centre first movie
                     let userInfo : [AnyHashable:Any] = ["movieDetail" : moviesList.first as Any]
                     NotificationCenter.default.post(name: .movieDetailNotificationKay, object: nil, userInfo: userInfo)
-                    print(moviesList)
+                    print("Array with movies have got from  UserDefaults - \(moviesList)")
                 }
             }
         }
@@ -104,6 +104,7 @@ extension ListMovieViewController: NSTableViewDelegate, NSTableViewDataSource {
             case .trailing, .leading:
                 let wantWatchMovieAction = NSTableViewRowAction(style: .destructive, title: "Favourite to watch") { [self] (rowAction, row) in
                     moviesList[row].isWantWatch.toggle()
+                    print("Movie with name - \(String(describing: moviesList[row].title)) now have favourite - \(moviesList[row].isWantWatch)")
                     listMovieTableView.reloadData()
                 }
                 wantWatchMovieAction.image = moviesList[row].isWantWatch ? NSImage(systemSymbolName: "heart.fill", accessibilityDescription: nil) : NSImage(systemSymbolName: "heart", accessibilityDescription: nil)

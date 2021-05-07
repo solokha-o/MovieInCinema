@@ -69,9 +69,7 @@ class MovieDetailViewController: NSViewController {
                     self.getMovies(for: similarMoviesLink)
                 }
             }
-            print(movieTitleTextField.stringValue)
-            print(releaseDateTextField.stringValue)
-            print(overViewMovieTextField.stringValue)
+            print("MovieDetailViewController have set with movie - \(String(describing: movie.title))")
         }
     }
     //configure loading similar movies from API
@@ -80,7 +78,7 @@ class MovieDetailViewController: NSViewController {
             if let similarMovies = movies.results {
                 self?.similarMovies = similarMovies
                 self?.similarMoviesCollectionView.reloadData()
-                print(similarMovies)
+                print("Array with movies have loaded from API- \(similarMovies)")
             }
         }
     }
@@ -92,7 +90,7 @@ class MovieDetailViewController: NSViewController {
                 if let similarMovies = movies.results {
                     self.similarMovies = similarMovies
                     self.similarMoviesCollectionView.reloadData()
-                    print(similarMovies)
+                    print("Array with movies have got from  UserDefaults - \(similarMovies)")
                 }
             }
         }

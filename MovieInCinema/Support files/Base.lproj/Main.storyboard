@@ -546,16 +546,16 @@
                                                 <rect key="frame" x="258" y="196" width="234" height="73"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="42X-Xp-ijU">
-                                                        <rect key="frame" x="-2" y="42" width="53" height="31"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="ihi-2Z-Dxp">
+                                                        <rect key="frame" x="-2" y="42" width="54" height="31"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" id="ihi-2Z-Dxp">
                                                             <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b4M-By-t9f">
-                                                        <rect key="frame" x="-2" y="21" width="82" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Release date" id="6DA-Ue-vbF">
+                                                        <rect key="frame" x="-2" y="21" width="54" height="16"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" id="6DA-Ue-vbF">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -563,7 +563,7 @@
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="93T-y8-evM">
                                                         <rect key="frame" x="-2" y="0.0" width="233" height="16"/>
-                                                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" alignment="justified" title="overview bla bla bla bla bla bla bla bla" id="Q8D-ER-7wt">
+                                                        <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" alignment="justified" id="Q8D-ER-7wt">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

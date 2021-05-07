@@ -18,10 +18,6 @@ class SimilarMovieCollectionViewItem: NSCollectionViewItem {
     }
     @IBOutlet weak var similarMovieTitleTextField: NSTextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
     //set outlets of item
     func setItem(from movieModel: MovieModel) {
         similarMovieTitleTextField.stringValue = movieModel.title ?? "No title"
@@ -33,5 +29,6 @@ class SimilarMovieCollectionViewItem: NSCollectionViewItem {
         } else {
             similarMoviePoster.image = cacheImage[poster]
         }
+        print("The item with movie \(String(describing: movieModel.title)) was set.")
     }
 }

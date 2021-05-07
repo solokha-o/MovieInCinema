@@ -34,7 +34,11 @@ extension NSImageView {
                         progressIndicator.stopAnimation(nil)
                         progressIndicator.isHidden = true
                     }
+                } else {
+                    fatalError("Image have got error!")
                 }
+            } else {
+                fatalError("Data dose not load!")
             }
         }
     }

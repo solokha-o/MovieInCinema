@@ -25,11 +25,6 @@ class MovieTableCellView: NSTableCellView {
     @IBOutlet weak var voteAverageTextField: NSTextField!
     @IBOutlet weak var isWantWatchImageView: NSImageView!
     
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        
-        // Drawing code here.
-    }
     //set outlets of cell
     func setCell(from movieModel: MovieModel) {
         movieTitleTextField.stringValue = movieModel.title ?? "No title"
@@ -47,5 +42,6 @@ class MovieTableCellView: NSTableCellView {
         } else {
             isWantWatchImageView.image = NSImage(systemSymbolName: "heart", accessibilityDescription: nil)
         }
+        print("The cell with movie \(String(describing: movieModel.title))was set.")
     }
 }

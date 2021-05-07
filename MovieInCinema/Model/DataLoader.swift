@@ -40,8 +40,6 @@ class DataLoader {
                     } catch {
                         print("Have some error - \(error.localizedDescription)")
                     }
-                case 503:
-                    print("ERROR!")
                 default:
                     print(response.statusCode)
             }
