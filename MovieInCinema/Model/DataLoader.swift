@@ -9,9 +9,9 @@ import Foundation
 
 class DataLoader {
     //create static instance of singleton class
-    static let shared = DataLoader()
+    public static let shared = DataLoader()
     //configure data loader from link and decode json to array
-    func loadData(from link: String, completion: @escaping ((MoviePeriod) -> Void)) {
+    public func loadData(from link: String, completion: @escaping ((MoviePeriod) -> Void)) {
        
         //create url from link
         guard let url = URL(string: link) else { fatalError("link is not correct!") }

@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import Network
 
 class MovieDetailViewController: NSViewController {
     
@@ -52,17 +53,48 @@ class MovieDetailViewController: NSViewController {
             overViewMovieTextField.stringValue = overview
             //create link to similar movie
             let similarMoviesLink = "https://api.themoviedb.org/3/movie/" + String(id) + "/similar?api_key=7e45f50a39e402a5a28aa506b9dc57da&language=en-US"
-            //load similar movies
-            DataLoader.shared.loadData(from: similarMoviesLink) { [weak self] movies in
-                if let moviesList = movies.results {
-                    self?.similarMovies = moviesList
-                    self?.similarMoviesCollectionView.reloadData()
-                    print(moviesList)
+            //create monitor for checking network connection
+            let monitorConnection = NWPathMonitor()
+            let queue = DispatchQueue(label: "MonitorConnection")
+            monitorConnection.start(queue: queue)
+            //check network for available
+            monitorConnection.pathUpdateHandler = { path in
+                if path.status == .satisfied {
+                    print("Mac have got connected!")
+                    //load movies' list from API if online
+                    self.loadMovies(from: similarMoviesLink)
+                } else {
+                    print("No connection.")
+                    //get movies' list from UserDefaults if offline
+                    self.getMovies(for: similarMoviesLink)
                 }
             }
             print(movieTitleTextField.stringValue)
             print(releaseDateTextField.stringValue)
             print(overViewMovieTextField.stringValue)
+        }
+    }
+    //configure loading similar movies from API
+    private func loadMovies(from link: String) {
+        DataLoader.shared.loadData(from: link) { [weak self] movies in
+            if let similarMovies = movies.results {
+                self?.similarMovies = similarMovies
+                self?.similarMoviesCollectionView.reloadData()
+                print(similarMovies)
+            }
+        }
+    }
+    //configure getting similar movies from UserDefaults
+    private func getMovies(for key: String) {
+        let decoder = JSONDecoder()
+        if let decoded = UserDefaults.standard.object(forKey: key) as? Data {
+            if let movies = try? decoder.decode(MoviePeriod.self, from: decoded) {
+                if let similarMovies = movies.results {
+                    self.similarMovies = similarMovies
+                    self.similarMoviesCollectionView.reloadData()
+                    print(similarMovies)
+                }
+            }
         }
     }
     //deinitialisation notification centre
@@ -73,11 +105,11 @@ class MovieDetailViewController: NSViewController {
 //configure extension for collection view
 extension MovieDetailViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
     //configure number of items in collection view
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+    internal func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         similarMovies.count
     }
     //configure item in collection view
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+    internal func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         guard let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SimilarMovieCollectionViewItem"), for: indexPath) as? SimilarMovieCollectionViewItem else { return NSCollectionViewItem()}
         item.setItem(from: similarMovies[indexPath.item])
         return item

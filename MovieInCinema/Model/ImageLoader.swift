@@ -9,11 +9,11 @@ import Foundation
 import Cocoa
 
 //create global dictionary for cache image
-var cacheImage = [String : NSImage]()
+public var cacheImage = [String : NSImage]()
 
 //configure extension load NSImage
 extension NSImageView {
-    func load(url: URL, cache key: String) {
+    public func load(url: URL, cache key: String) {
         //add to NSImageView progressIndicator and configure it
         let progressIndicator = NSProgressIndicator()
         progressIndicator.frame = NSRect(x: 0, y: 0, width: 40, height: 40)
