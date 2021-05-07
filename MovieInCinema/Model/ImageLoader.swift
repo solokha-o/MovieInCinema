@@ -16,8 +16,7 @@ extension NSImageView {
     public func load(url: URL, cache key: String) {
         //add to NSImageView progressIndicator and configure it
         let progressIndicator = NSProgressIndicator()
-        progressIndicator.frame = NSRect(x: 0, y: 0, width: 40, height: 40)
-        progressIndicator.layer?.position = NSPoint(x: self.frame.origin.x + self.frame.width/2, y: self.frame.origin.y + self.frame.height/2)
+        progressIndicator.frame = NSRect(x: self.bounds.origin.x + self.bounds.width/2 - 40, y: self.bounds.origin.y + self.bounds.height/2 - 20, width: 40, height: 40)
         progressIndicator.style = .spinning
         self.addSubview(progressIndicator)
         progressIndicator.startAnimation(nil)
