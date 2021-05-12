@@ -41,6 +41,15 @@ class ListMovieViewController: NSViewController {
                 self.loadMovies(from: self.movieLink)
             } else {
                 print("No connection.")
+                //get cache from UserDefaults if offline
+                if let data = UserDefaults.standard.data(forKey: "cacheImage") {
+                    if let cacheImageData = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [NSString : NSImage] {
+                        for (key, image) in cacheImageData {
+                            cacheImage.setObject(image, forKey: key)
+                            print("Add image - \(image) to imageCache with key \(key)")
+                        }
+                    }
+                }
                 //get movies' list from UserDefaults if offline
                 self.getMovies(for: self.movieLink)
             }

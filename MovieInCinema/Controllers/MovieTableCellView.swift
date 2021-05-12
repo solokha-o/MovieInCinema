@@ -35,7 +35,7 @@ class MovieTableCellView: NSTableCellView {
         if cacheImage.object(forKey: poster as NSString) == nil {
             moviePosterImageView.load(url: link, cache: poster)
         } else {
-            cacheImage.object(forKey: poster as NSString)
+            moviePosterImageView.image = cacheImage.object(forKey: poster as NSString)
         }
         if movieModel.isWantWatch {
             isWantWatchImageView.image = NSImage(systemSymbolName: "heart.fill", accessibilityDescription: nil)

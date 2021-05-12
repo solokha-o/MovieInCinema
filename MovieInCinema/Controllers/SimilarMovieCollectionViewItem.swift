@@ -27,7 +27,7 @@ class SimilarMovieCollectionViewItem: NSCollectionViewItem {
         if cacheImage.object(forKey: poster as NSString) == nil {
             similarMoviePoster.load(url: link, cache: poster)
         } else {
-            cacheImage.object(forKey: poster as NSString)
+            similarMoviePoster.image = cacheImage.object(forKey: poster as NSString)
         }
         print("The item with movie \(String(describing: movieModel.title)) was set.")
     }
