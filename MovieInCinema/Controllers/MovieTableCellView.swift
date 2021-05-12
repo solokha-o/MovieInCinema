@@ -32,10 +32,10 @@ class MovieTableCellView: NSTableCellView {
         guard let poster = movieModel.posterPath else { fatalError("No poster") }
         guard let link = URL(string: "https://image.tmdb.org/t/p/original" + poster) else { fatalError("Image link is not correct!") }
         //check if image in cache, if not - load it
-        if cacheImage[poster] == nil {
+        if cacheImage.object(forKey: poster as NSString) == nil {
             moviePosterImageView.load(url: link, cache: poster)
         } else {
-            moviePosterImageView.image = cacheImage[poster]
+            cacheImage.object(forKey: poster as NSString)
         }
         if movieModel.isWantWatch {
             isWantWatchImageView.image = NSImage(systemSymbolName: "heart.fill", accessibilityDescription: nil)

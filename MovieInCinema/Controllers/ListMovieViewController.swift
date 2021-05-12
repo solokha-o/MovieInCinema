@@ -66,11 +66,13 @@ class ListMovieViewController: NSViewController {
             if let movies = try? decoder.decode(MoviePeriod.self, from: decoded) {
                 if let moviesList = movies.results {
                     self.moviesList = moviesList
-                    self.listMovieTableView.reloadData()
-                    //set in notification centre first movie
-                    let userInfo : [AnyHashable:Any] = ["movieDetail" : moviesList.first as Any]
-                    NotificationCenter.default.post(name: .movieDetailNotificationKay, object: nil, userInfo: userInfo)
-                    print("Array with movies have got from  UserDefaults - \(moviesList)")
+                    DispatchQueue.main.async {
+                        self.listMovieTableView.reloadData()
+                        //set in notification centre first movie
+                        let userInfo : [AnyHashable:Any] = ["movieDetail" : moviesList.first as Any]
+                        NotificationCenter.default.post(name: .movieDetailNotificationKay, object: nil, userInfo: userInfo)
+                        print("Array with movies have got from  UserDefaults - \(moviesList)")
+                    }
                 }
             }
         }

@@ -43,10 +43,10 @@ class MovieDetailViewController: NSViewController {
         if let posterPath = movie.posterPath, let title = movie.title, let releaseDate = movie.releaseDate, let overview = movie.overview, let id = movie.id{
             guard let posterURL = URL(string: "https://image.tmdb.org/t/p/original" + posterPath) else { fatalError("No correct poster link") }
             //check if image in cache, if not - load it
-            if cacheImage[posterPath] == nil {
+            if cacheImage.object(forKey: posterPath as NSString) == nil {
                 moviePosterImageView.load(url: posterURL, cache: posterPath)
             } else {
-                moviePosterImageView.image = cacheImage[posterPath]
+                moviePosterImageView.image = cacheImage.object(forKey: posterPath as NSString)
             }
             movieTitleTextField.stringValue = title
             releaseDateTextField.stringValue = releaseDate
@@ -89,7 +89,9 @@ class MovieDetailViewController: NSViewController {
             if let movies = try? decoder.decode(MoviePeriod.self, from: decoded) {
                 if let similarMovies = movies.results {
                     self.similarMovies = similarMovies
-                    self.similarMoviesCollectionView.reloadData()
+                    DispatchQueue.main.async {
+                        self.similarMoviesCollectionView.reloadData()
+                    }
                     print("Array with movies have got from  UserDefaults - \(similarMovies)")
                 }
             }

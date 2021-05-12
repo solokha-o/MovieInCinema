@@ -8,8 +8,8 @@
 import Foundation
 import Cocoa
 
-//create global dictionary for cache image
-public var cacheImage = [String : NSImage]()
+//create global NSCache instance for cache image
+public var cacheImage = NSCache<NSString, NSImage>()
 
 //configure extension load NSImage
 extension NSImageView {
@@ -26,10 +26,10 @@ extension NSImageView {
                 if let image = NSImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
-                        //if image isn't in cache dictionary that add it into
-                        if cacheImage[key] == nil {
-                            cacheImage.updateValue(image, forKey: key)
-                            print(cacheImage)
+                        //if image isn't in cache that add it into
+                        if cacheImage.object(forKey: key as NSString) == nil {
+                            cacheImage.setObject(image, forKey: key as NSString)
+                            print("Image \(image) save to cacheImage with key - \(key)")
                         }
                         progressIndicator.stopAnimation(nil)
                         progressIndicator.isHidden = true
@@ -37,8 +37,6 @@ extension NSImageView {
                 } else {
                     fatalError("Image have got error!")
                 }
-            } else {
-                fatalError("Data dose not load!")
             }
         }
     }
