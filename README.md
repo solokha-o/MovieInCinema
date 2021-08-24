@@ -27,7 +27,7 @@
 
   
 ## Includes
-- Framework
+- Cocoa Framework
 - Custom Modifiers 
 
 ## Author
@@ -35,7 +35,7 @@
 
 ## License
 
-Copyright 2020 Oleksandr Solokha.
+Copyright 2021 Oleksandr Solokha.
 
 Licensed under MIT License: https://opensource.org/licenses/MIT
 
